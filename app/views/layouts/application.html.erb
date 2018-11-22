@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <% if show_user %>      
+      <h3>Current user:</h3>
+      <p><%= show_user %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
