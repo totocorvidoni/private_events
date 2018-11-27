@@ -10,13 +10,20 @@
     <% end %>
   </ul>
 <% end %>
-<h3>Events Attending</h3>
+<h3>Event Participation</h3>
   <% if @user.attended_events.empty?  %>
-    <p>You have no events to attend</p>
+    <p>You have no events</p>
   <% else %>
-    <ul>
-      <% @user.attended_events.each do |event| %>
-        <li><%= event.description %></li>
-      <% end %>
-    </ul>  
+  <h4>Upcoming Events</h4>
+  <ul>
+    <% @upcoming_events.each do |event| %>
+      <li><%= "#{event.description} - #{event.date}" %></li>
+    <% end %>
+  </ul>
+  <h4>Previous Events</h4>
+  <ul>
+    <% @previous_events.each do |event| %>
+      <li><%= "#{event.description} - #{event.date}" %></li>
+    <% end %>
+  </ul>
   <% end %>

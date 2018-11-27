@@ -6,4 +6,12 @@ class User < ApplicationRecord
   def self.sign_in(user_id)
     session[:user_id] = user_id
   end
+
+  def upcoming_events
+    attended_events.select { |event| Time.now < event.date }
+  end
+
+  def previous_events
+    attended_events.select { |event| Time.now > event.date }
+  end
 end
