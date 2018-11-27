@@ -1,4 +1,3 @@
 <li>
-  <p><%= event.description %></p>
-  <p>Creator: <%= User.find(event.creator_id).name %></p>
+  <%= event.description %> - Created by <%= User.find(event.creator_id).name %>
 </li>
