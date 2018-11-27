@@ -11,9 +11,27 @@
 
   <body>
     <% if show_user %>      
-      <h3>Current user:</h3>
-      <p><%= show_user %></p>
+      <strong>Current user: <%= show_user %></strong>
     <% end %>
+    <nav>
+      <li>
+        <strong><%= link_to 'Login', new_session_path %></strong>
+        <strong><%= link_to 'Signup', new_user_path %></strong>
+      </li>
+      <li>
+        <strong><%= link_to 'Events:', events_path %></strong> 
+        <% Event.all.each do |event| %>
+          <%= link_to event.description, event_path(event) %>
+        <% end %>
+        // <%= link_to 'New Event', new_event_path %>
+      </li>
+      <li>
+        <strong>Users: </strong>
+        <% User.all.each do |user| %>
+          <%= link_to user.name, user_path(user) %>
+        <% end %>
+      </li>
+    </nav>
     <%= yield %>
   </body>
 </html>
