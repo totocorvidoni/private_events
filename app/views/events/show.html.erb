@@ -2,3 +2,12 @@
 
 <h2>Details</h2>
 <p><%= @event.description %></p>
+
+<% unless @event.attendees.empty? %>
+  <h2>Attendees</h2>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+      <li><%= attendee.name %></li>
+    <% end %>  
+  </ul>
+<% end %>
