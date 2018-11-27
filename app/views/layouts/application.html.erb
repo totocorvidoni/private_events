@@ -31,6 +31,9 @@
           <%= link_to user.name, user_path(user) %>
         <% end %>
       </li>
+      <li>
+        <%= link_to 'New Invitation', new_invitation_path %>
+      </li>
     </nav>
     <%= yield %>
   </body>

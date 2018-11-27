@@ -10,4 +10,5 @@
       <li><%= attendee.name %></li>
     <% end %>  
   </ul>
+  <%= link_to 'Assist this event', attendances_path(user_id: session[:user_id], event_id: params[:id]), method: :post %>
 <% end %>

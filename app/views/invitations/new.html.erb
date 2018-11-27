@@ -1,0 +1,11 @@
+<h1>Send an invitation</h1>
+
+<%= form_for @invitation do |f| %>
+  <%= f.label :user, 'Invite:' %>
+  <%= f.text_field :user %>
+
+  <%= f.label :event, 'to the event:' %>
+  <%= f.text_field :event %>
+
+  <%= f.submit %>
+<% end %>
